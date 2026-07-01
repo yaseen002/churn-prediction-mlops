@@ -1,0 +1,17 @@
+Loading data...
+Preprocessing data...
+/home/unknown/Workspace/PROJECTS/churn-prediction-mlops/train.py:25: ChainedAssignmentError: A value is being set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+Such inplace method never works to update the original DataFrame or Series, because the intermediate object on which we are setting values always behaves as a copy (due to Copy-on-Write).
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' instead, to perform the operation inplace on the original object, or try to avoid an inplace operation using 'df[col] = df[col].method(value)'.
+
+See the documentation for a more detailed explanation: https://pandas.pydata.org/pandas-docs/stable/user_guide/copy_on_write.html
+  df['TotalCharges'].fillna(df['TotalCharges'].median(), inplace=True)
+Training model...
+Traceback (most recent call last):
+  File "/home/unknown/Workspace/PROJECTS/churn-prediction-mlops/train.py", line 90, in <module>
+    main()
+    ~~~~^^
+  File "/home/unknown/Workspace/PROJECTS/churn-prediction-mlops/train.py", line 49, in main
+    model = RandomForestClassifier(**hyperparams)
+TypeError: RandomForestClassifier.__init__() got an unexpected keyword argument 'test_size'

@@ -1,0 +1,49 @@
+_wandb:
+    value:
+        cli_version: 0.28.0
+        e:
+            u4hirwjs1nkjr601zbcisouov6dyovoh:
+                codePath: train.py
+                codePathLocal: train.py
+                cpu_count: 2
+                cpu_count_logical: 4
+                disk:
+                    /:
+                        total: "242579488768"
+                        used: "92140326912"
+                email: test5667890@gmail.com
+                executable: /home/unknown/Workspace/PROJECTS/churn-prediction-mlops/venv/bin/python
+                git:
+                    remote: https://github.com/yaseen002/churn-prediction-mlops.git
+                host: kali
+                memory:
+                    total: "8203591680"
+                os: Linux-6.19.14+kali-amd64-x86_64-with-glibc2.42
+                program: /home/unknown/Workspace/PROJECTS/churn-prediction-mlops/train.py
+                python: CPython 3.13.12
+                root: /home/unknown/Workspace/PROJECTS/churn-prediction-mlops
+                startedAt: "2026-07-01T11:02:55.146607Z"
+                writerId: u4hirwjs1nkjr601zbcisouov6dyovoh
+        m: []
+        python_version: 3.13.12
+        t:
+            "1":
+                - 5
+                - 53
+            "2":
+                - 5
+                - 53
+            "3":
+                - 13
+            "4": 3.13.12
+            "5": 0.28.0
+            "12": 0.28.0
+            "13": linux-x86_64
+max_depth:
+    value: 10
+n_estimators:
+    value: 100
+random_state:
+    value: 42
+test_size:
+    value: 0.2

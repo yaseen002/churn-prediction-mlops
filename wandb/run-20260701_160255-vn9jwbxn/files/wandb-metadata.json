@@ -1,0 +1,27 @@
+{
+  "os": "Linux-6.19.14+kali-amd64-x86_64-with-glibc2.42",
+  "python": "CPython 3.13.12",
+  "startedAt": "2026-07-01T11:02:55.146607Z",
+  "program": "/home/unknown/Workspace/PROJECTS/churn-prediction-mlops/train.py",
+  "codePath": "train.py",
+  "codePathLocal": "train.py",
+  "git": {
+    "remote": "https://github.com/yaseen002/churn-prediction-mlops.git"
+  },
+  "email": "test5667890@gmail.com",
+  "root": "/home/unknown/Workspace/PROJECTS/churn-prediction-mlops",
+  "host": "kali",
+  "executable": "/home/unknown/Workspace/PROJECTS/churn-prediction-mlops/venv/bin/python",
+  "cpu_count": 2,
+  "cpu_count_logical": 4,
+  "disk": {
+    "/": {
+      "total": "242579488768",
+      "used": "92140326912"
+    }
+  },
+  "memory": {
+    "total": "8203591680"
+  },
+  "writerId": "u4hirwjs1nkjr601zbcisouov6dyovoh"
+}

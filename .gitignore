@@ -1,0 +1,16 @@
+# Virtual Environment
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# Models and Data (We don't push large files to GitHub)
+models/*.joblib
+data/*.csv
+
+# IDE
+.vscode/
+.idea/
