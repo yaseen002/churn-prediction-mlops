@@ -1,0 +1,12 @@
+
+services:
+  churn-api:
+    # Build the image using the Dockerfile in the current directory
+    build: .
+    # Map port 8000 on your local machine to port 8000 in the container
+    ports:
+      - "8000:8000"
+    # Give the container a nice name
+    container_name: churn_prediction_api
+    # Restart automatically if it crashes
+    restart: unless-stopped
