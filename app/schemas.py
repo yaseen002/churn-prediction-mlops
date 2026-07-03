@@ -1,6 +1,7 @@
 from pydantic import BaseModel, Field
 from typing import Optional
 
+
 # Updated to Pydantic V2 syntax using 'examples=[...]'
 class CustomerData(BaseModel):
     gender: str = Field(..., examples=["Male"])

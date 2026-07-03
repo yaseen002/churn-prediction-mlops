@@ -1,11 +1,11 @@
 import pandas as pd
-import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
 import joblib
 import wandb
 import os
+
 
 def main():
     # 1. Initialize W&B Run
@@ -19,11 +19,11 @@ def main():
     # 3. Preprocessing
     print("Preprocessing data...")
     df.drop('customerID', axis=1, inplace=True)
-    
+
     # FIX 1: Pandas Copy-on-Write fix (removed inplace=True)
     df['TotalCharges'] = pd.to_numeric(df['TotalCharges'], errors='coerce')
     df['TotalCharges'] = df['TotalCharges'].fillna(df['TotalCharges'].median())
-    
+
     # Target encoding
     df['Churn'] = df['Churn'].map({'Yes': 1, 'No': 0})
 
@@ -34,7 +34,9 @@ def main():
     y = df['Churn']
 
     # 4. Split Data
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42
+    )
 
     # FIX 2: Separate model hyperparameters from data splitting parameters
     model_params = {
@@ -42,7 +44,7 @@ def main():
         "max_depth": 10,
         "random_state": 42
     }
-    
+
     # Log all configuration to W&B
     wandb.config.update({
         "test_size": 0.2,
@@ -69,7 +71,7 @@ def main():
 
     # 7. Save Model and Artifacts
     os.makedirs("models", exist_ok=True)
-    
+
     # Save the model
     model_path = "models/random_forest_model.joblib"
     joblib.dump(model, model_path)
@@ -80,8 +82,8 @@ def main():
 
     # Log model to W&B Artifacts
     artifact = wandb.Artifact(
-        name="churn-random-forest", 
-        type="model", 
+        name="churn-random-forest",
+        type="model",
         description="Random Forest model for Telco Churn prediction"
     )
     artifact.add_file(model_path)
@@ -89,6 +91,7 @@ def main():
     wandb.log_artifact(artifact)
 
     print("Training complete! Check your W&B dashboard.")
+
 
 if __name__ == "__main__":
     main()
